@@ -20,6 +20,8 @@ def save_settings():
 def main_menu():
     global exit_code
     # Set up New Lesson
+        # lesson_info = create_lesson()
+        # Lesson(lesson_info)
     # Check Payment Status
         # Checks from completed transactions
         # If a transaction is complete, creates a meeting

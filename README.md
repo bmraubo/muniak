@@ -22,7 +22,7 @@ Additionally it will:
 
 The app with keep track of all students - when a lesson is arranged, the app creates a payment request and sends it to the student. 
 
-When the student pays, the app creates a Zoom meeting and emails the link to the student.
+When the student pays, the app creates a Zoom meeting and emails the link to the student and the host.
 
 Once this is accomplished and working, expansion is possible.
 
@@ -39,6 +39,8 @@ Will use PyInquirer
 #### Store info in persistent JSON
 
 #### Input interface to arrange lesson
+
+Input interface to add object to Lesson class. 
 
 #### PayPal API Call - Request
 
