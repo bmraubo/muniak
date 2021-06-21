@@ -10,6 +10,9 @@ def pack_json():
 
 def load_settings():
     # parses settings.json and loads values into settings variables
+    # settings:
+    # host_name, host_email
+    # manual_checks - human confirmation of zoom call
     pass
 
 def save_settings():
@@ -23,15 +26,19 @@ def main_menu():
         # lesson_info = create_lesson()
         # Lesson(lesson_info)
     # Check Payment Status
-        # Checks from completed transactions
+        # live_transactions = all transactions that are pending or completed (up to day after lesson)
+        # pending_transactions = list of payments requested but not made
+        # for transaction in pending_transactions: check_payment_status
+        # Checks for completed transactions
         # If a transaction is complete, creates a meeting
         # Displays list of created meetings
         # Outstanding payments listed in order of proximity to lesson
+    # Add new student
     # Create Report
         # Generates Report and emails it to selected admin
+        # Export all user data by email to host/admin account
     # Settings
-    # Exit
-        #exit_code = 1
+    # Exit the app
         
     pass
 
