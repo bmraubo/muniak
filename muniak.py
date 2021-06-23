@@ -1,3 +1,5 @@
+import PyInquirer as inq
+
 #### Store transaction data in persistent JSON
 
 def unpack_json():
@@ -18,10 +20,43 @@ def load_settings():
 def save_settings():
     pass
 
+# Main Menu choices
+
+def make_choice(choice):
+    global exit_code
+    if choice['Main Menu'] == 'Set up New Lesson':
+        print('PLACEHOLDER:\tSet up New Lesson')
+    elif choice['Main Menu'] == 'Process Payments':
+        print('PLACEHOLDER:\tProcessing Payments')
+    elif choice['Main Menu'] == 'View Lesson':
+        print('PLACEHOLDER:\tView Lesson')
+    elif choice['Main Menu'] == 'Add New Student':
+        print('PLACEHOLDER:\tAdd New Student')
+    elif choice['Main Menu'] == 'Reports':
+        print('PLACEHOLDER:\tReports Menu')
+    else:
+        print('EXITING APP')
+        exit_code = 1
+
 #### Main menu
 
 def main_menu():
-    global exit_code
+    question = [{
+        'type': 'list',
+        'name': 'Main Menu',
+        'message': 'Pick an option',
+        'choices': [
+            'Set up New Lesson',
+            'Process Payments',
+            'View Lesson',
+            'Add New Student',
+            'Reports',
+            'Exit'
+            ]
+    }]
+    choice = inq.prompt(question)
+    print(choice['Main Menu'])
+    make_choice(choice)
     # Set up New Lesson
         # lesson_info = create_lesson()
         # Lesson(lesson_info)
