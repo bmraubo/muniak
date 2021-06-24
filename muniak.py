@@ -1,4 +1,5 @@
 import PyInquirer as inq
+import report, payment
 
 #### Store transaction data in persistent JSON
 
@@ -20,20 +21,48 @@ def load_settings():
 def save_settings():
     pass
 
-# Main Menu choices
+# Reports Menu
 
-def make_choice(choice):
+def reports_menu():
+    options = [{
+        'type': 'list',
+        'name': 'View Reports',
+        'message': 'Pick an option',
+        'choices': [
+            'Daily Report',
+            'Export all Data',
+            'Back'
+            ]
+    }]
+    choice = inq.prompt(options)
+    print(choice['View Reports'])
+    report_menu_choice(choice)
+
+def report_menu_choice(choice):
+    if choice['View Reports'] == 'Daily Report':
+        print('PLACEHOLDER: generate daily report...')
+        report.generate_daily_report('hello@world.com')
+    elif choice['View Reports'] == 'Export all Data':
+        report.export_data('hello@world.com')
+    else:
+        pass
+
+# Main Menu
+
+#### Main Menu choices
+
+def main_menu_choice(choice):
     global exit_code
     if choice['Main Menu'] == 'Set up New Lesson':
         print('PLACEHOLDER:\tSet up New Lesson')
     elif choice['Main Menu'] == 'Process Payments':
-        print('PLACEHOLDER:\tProcessing Payments')
+        payment.process_payments()
     elif choice['Main Menu'] == 'View Lesson':
         print('PLACEHOLDER:\tView Lesson')
     elif choice['Main Menu'] == 'Add New Student':
         print('PLACEHOLDER:\tAdd New Student')
     elif choice['Main Menu'] == 'Reports':
-        print('PLACEHOLDER:\tReports Menu')
+        reports_menu()
     else:
         print('EXITING APP')
         exit_code = 1
@@ -41,7 +70,7 @@ def make_choice(choice):
 #### Main menu
 
 def main_menu():
-    question = [{
+    options = [{
         'type': 'list',
         'name': 'Main Menu',
         'message': 'Pick an option',
@@ -54,9 +83,9 @@ def main_menu():
             'Exit'
             ]
     }]
-    choice = inq.prompt(question)
+    choice = inq.prompt(options)
     print(choice['Main Menu'])
-    make_choice(choice)
+    main_menu_choice(choice)
     # Set up New Lesson
         # lesson_info = create_lesson()
         # Lesson(lesson_info)

@@ -20,4 +20,5 @@ class Lesson:
 ## Zoom API Call - Arrange Meeting
 
 def create_Zoom():
+    print('making Zoom API call...')
     pass
