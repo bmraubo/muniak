@@ -20,6 +20,8 @@ def check_payment_status(lesson):
     print(f'checking payment status for {lesson["id"]}')
     if lesson['id'] == '3':
         return 'y'
+    else:
+        return 'n'
     
 
 ## Process Payments
@@ -32,7 +34,7 @@ def process_payments():
             print(lesson['paid'])
             if lesson['paid'] == 'y':
                 meet.create_Zoom()
-    display.display_lessons()
+    display.display_lessons(lessons) #display in 2 groups reverse chronologically: unpaid, paid
                 
     
 
