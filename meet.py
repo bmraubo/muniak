@@ -19,6 +19,12 @@ class Lesson:
 
 ## Zoom API Call - Arrange Meeting
 
-def create_Zoom():
+def create_Zoom(lesson):
     print('making Zoom API call...')
-    pass
+    print('OK!')
+    send_Zoom(lesson)
+
+def send_Zoom(lesson):
+    print('Sending Zoom info to student...')
+    print('Sending Zoom info to host...')
+    print('OK!')

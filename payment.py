@@ -17,10 +17,13 @@ def make_payment_request(lesson):
 ## Check Payment Status
 
 def check_payment_status(lesson):
-    print(f'checking payment status for {lesson["id"]}')
+    print(f'checking payment status for lesson #{lesson["id"]}')
+    print('Making Paypal API call...')
     if lesson['id'] == '3':
+        print(f'Payment for lesson #{lesson["id"]} has been made.')
         return 'y'
     else:
+        print(f'No payment for lesson #{lesson["id"]}')
         return 'n'
     
 
@@ -31,11 +34,10 @@ def process_payments():
     for lesson in lessons:
         if lesson['paid'] == 'n':
             lesson['paid'] = check_payment_status(lesson)
-            print(lesson['paid'])
             if lesson['paid'] == 'y':
-                meet.create_Zoom()
+                meet.create_Zoom(lesson)
     display.display_lessons(lessons) #display in 2 groups reverse chronologically: unpaid, paid
-                
+    print('\npayments processed!\n')         
     
 
 

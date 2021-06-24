@@ -83,8 +83,9 @@ def main_menu():
             'Exit'
             ]
     }]
+    print('\n\n')
     choice = inq.prompt(options)
-    print(choice['Main Menu'])
+    print('\n\n')
     main_menu_choice(choice)
     # Set up New Lesson
         # lesson_info = create_lesson()

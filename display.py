@@ -12,7 +12,8 @@ def display_lessons(lessons):
         elif lesson['paid'] == 'y':
             paid_lessons.append(lesson)
     for lesson in unpaid_lessons:
-        print(f'Lesson {lesson["id"]} remains unpaid.')
+        print(f'Lesson #{lesson["id"]} remains unpaid.')
     for lesson in paid_lessons:
-        print(f'Lesson {lesson["id"]} has been paid for.')
+        print(f'Lesson #{lesson["id"]} has been paid for.')
+    print('OK!')
     
